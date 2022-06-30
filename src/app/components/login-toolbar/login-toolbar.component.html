@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse justify-content-end" id="navigation" [ngbCollapse]="isCollapsed">
+      <ul class="navbar-nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+          <a [routerLink]="[menuItem.path]" class="nav-link" href="login{{menuItem.path}}">
+            {{menuItem.title}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

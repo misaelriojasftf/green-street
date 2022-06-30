@@ -1,0 +1,80 @@
+<div ngClass="login-container">
+  <div ngClass="login-container__left">
+  </div>
+  <div ngClass="login-container__right">
+    <login-toolbar></login-toolbar>
+    <div ngClass="login-container__right__logo">
+      <img src="./assets/img/logo.png" alt="logo" />
+    </div>
+    <div ngClass="login-container__right__form">
+      <div ngClass="form-container">
+        <div class="row justify-content-center">
+          Ingresa tus credenciales
+        </div>
+        <hr />
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <input type="text" formControlName="username" placeholder="Usuario" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <input type="password" formControlName="password" placeholder="Contraseña" class="form-control"
+              required />
+          </div>
+          <div ngClass="text-button">
+            <button type="button" class="btn btn-neutral">Olvidaste tu contraseña</button>
+          </div>
+          <div class="row justify-content-center">
+            <button [disabled]="loading" type="submit" (click)="onLogin()" class="btn btn-primary" >Iniciar Sesión</button>
+          </div>
+        </form>
+      </div>
+      <div ngClass="footer">
+        Powered by AURUS
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="row">
+  <div style="width: 25%;">
+    <div class="card" style="background-image: url('../../../assets/img/login_background.png');"></div>
+  </div>
+  <div style="width: 75%;">
+    <div class="card">
+      <login-toolbar></login-toolbar>
+      <div class="card-header"></div>
+      <div class="row justify-content-center">
+        <div class="col-sm-6 col-lg-4">
+          <div class="row justify-content-center">
+            <a class="simple-text logo-mini">
+              <div class="logo-img">
+                <img src="./assets/img/logo.png" />
+              </div>
+            </a>
+          </div>
+          <div class="row justify-content-center">
+            <div class="logo">
+              <a class="simple-text logo-normal">
+                Ingresa tus credenciales
+              </a>
+            </div>
+          </div>
+          <hr style="background-color: #1FA6AA;" />
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="form-group">
+              <input type="text" formControlName="username" placeholder="Usuario" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <input type="password" formControlName="password" placeholder="Contraseña" class="form-control"
+                required />
+            </div>
+            <div class="row justify-content-center">
+              <button [disabled]="loading" type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
