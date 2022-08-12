@@ -31,6 +31,8 @@ export class AuthService {
 
 
   adminLogin(authData: User): Observable<UserResponse | void> {
+
+    console.log('AUTH', authData);
     return this.http
       .post<UserResponse>(`${environment.apiUrl}/auth/admin/signin`, authData)
       .pipe(

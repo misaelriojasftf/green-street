@@ -13,8 +13,9 @@ export class CheckLoggedGuard implements CanActivate {
     return this.authSvc.isLogged.pipe(
       take(1),
       map((isLogged)=>{
+        console.warn('IS LOGGED', isLogged);
         if(!isLogged){
-          //this.router.navigate(['/login/']);
+          this.router.navigate(['/login']);
         }
         return isLogged;
       })

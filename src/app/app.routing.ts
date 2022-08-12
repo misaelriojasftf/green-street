@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { MAIN_ROUTER_PATH } from './core/enums/routing.enums';
-import { CheckLoginGuard } from './core/guards/check-login.guard';
 import { CheckLoggedGuard } from './core/guards/check-logged.guard';
 
 const routes: Routes = [
@@ -13,6 +12,7 @@ const routes: Routes = [
     path: '',
     redirectTo: MAIN_ROUTER_PATH.DASHBOARD,
     pathMatch: 'full',
+    canActivate:[CheckLoggedGuard]
   },
   {
     path: '',
@@ -34,7 +34,9 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: MAIN_ROUTER_PATH.DASHBOARD
+    redirectTo: MAIN_ROUTER_PATH.DASHBOARD,
+    canActivate:[CheckLoggedGuard]
+
   }
 ];
 
